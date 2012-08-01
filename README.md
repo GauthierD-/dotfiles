@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-Config Vim and git
+These are my configs files for iTerm2 
