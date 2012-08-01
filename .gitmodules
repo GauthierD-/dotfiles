@@ -9,4 +9,4 @@
         url = https://github.com/briancollins/vim-jst 
 [submodule "vim/bundle/vim-powerline"]
         path = vim/bundle/vim-powerline
-        url = https://github.com/Lokaltog/vim-powerline/ 
+        url = https://github.com/Lokaltog/vim-powerline 

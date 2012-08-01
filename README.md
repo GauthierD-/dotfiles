@@ -1,4 +1,12 @@
 dotfiles
 ========
 
-These are my configs files for iTerm2 
+These are my config files for iTerm2  
+
+COMING SOON
+===========
+
+install.sh  
+SQL Stylesheet for CODA  
+tmux.conf  
+...
