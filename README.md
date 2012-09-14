@@ -1,12 +1,14 @@
 dotfiles
 ========
 
-These are my config files for iTerm2  
+These are my config files for my linux Terminal !
+
+Install
+=======
+
+run install.sh script and it's done dude
 
 COMING SOON
 ===========
 
-install.sh  
 SQL Stylesheet for CODA  
-tmux.conf  
-...
