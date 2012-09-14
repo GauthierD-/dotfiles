@@ -10,27 +10,42 @@ set nocompatible
 syntax enable
 set encoding=utf-8
 set showcmd
+colorscheme SolarizedDark 
+
+" Abbreviations
+:iabbrev @@     g.deroo@gmail.com
+:iabbrev nnick  GauthierD-
 
 " Whitespace
 set nowrap
 set tabstop=4 shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
+" set list
 
 " SWAGG
-" set colorcolumn=81
+set colorcolumn=81
 set relativenumber
+" set cursorline
 
-"Vim-javascript
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+
+" Vim-javascript
 let g:html_indent_inctags = "html, body, head, tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-"Vim powerline
+" Vim powerline
 let g:Powerline_symbols = "unicode"
 set laststatus=2
 set t_Co=256
 
-"Vim EJS
+" Vim EJS
 au BufNewFile,BufRead *.ejs set filetype=js
 au BufnewFile,BufRead *.ejs set filetype=html
+
+" Numbers.vim
+nnoremap <F3> :NumbersToggle<CR>

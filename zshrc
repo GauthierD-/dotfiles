@@ -34,29 +34,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-
-# MacPorts Installer addition on 2011-11-06_at_22:43:24: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-# Server Athos - Beloola
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
-export MYSQL_CONFIG=/usr/local/mysql/bin/mysql_config/
-# 
-
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-alias mysqldump=/usr/local/mysql/bin/mysqldump
-
-alias ls="ls -Gh"
-alias ll="ls -lh"
-alias la="ls -lah"
-alias ifc="ifconfig"
-alias if0="ifconfig en0"
-alias if1="ifconfig en1"
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
+alias tmux='tmux -2'
