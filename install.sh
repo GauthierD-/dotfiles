@@ -20,6 +20,6 @@ ln -s ~/Github/dotfiles/vimrc ~/.vimrc
 ln -s ~/Github/dotfiles/zshrc ~/.zshrc
 
 echo "Updating submodules"
-git submodules foreach git pull origin master --recurse-submodules
+git submodule foreach git pull origin master --recurse-submodules
 
 echo "All done. Biatch!"
