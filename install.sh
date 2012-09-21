@@ -13,11 +13,11 @@ mv ~/.vimrc ~/oldDotfiles/vimrc
 mv ~/.zshrc ~/oldDotfiles/zshrc
 
 echo "Symlinking files"
-ln -s ~/Github/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/Github/dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/Github/dotfiles/vim ~/.vim
-ln -s ~/Github/dotfiles/vimrc ~/.vimrc
-ln -s ~/Github/dotfiles/zshrc ~/.zshrc
+ln -s gitconfig ~/.gitconfig
+ln -s tmux.conf ~/.tmux.conf
+ln -s vim ~/.vim
+ln -s vimrc ~/.vimrc
+ln -s zshrc ~/.zshrc
 
 echo "Updating submodules"
 git submodule foreach git pull origin master --recurse-submodules
