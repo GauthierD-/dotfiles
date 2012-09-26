@@ -15,7 +15,7 @@ mv ~/.zshrc ~/oldDotfiles/zshrc
 echo "Symlinking files"
 cp gitconfig ~/.gitconfig
 cp tmux.conf ~/.tmux.conf
-cp -r vim ~/.vim
+cp -r vim ~/.
 cp vimrc ~/.vimrc
 cp zshrc ~/.zshrc
 
