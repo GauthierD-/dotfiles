@@ -47,5 +47,14 @@ set t_Co=256
 au BufNewFile,BufRead *.ejs set filetype=js
 au BufnewFile,BufRead *.ejs set filetype=html
 
-" Numbers.vim
+let mapleader = ","
+" Eddit my vimrc faster
+nmap <leader>ev :vsplit $MYVIMRC<CR>
+
+" Mappings
 nnoremap <F3> :NumbersToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
+nmap <F11> :Matrix<CR>
+" SOON FUCK THAT nnoremap <F5> :GundoToggle<CR>
+let g:EasyMotion_leader_key = '<leader>'
