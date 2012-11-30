@@ -1,12 +1,42 @@
 [submodule "vim/bundle/vim-jade"]
-        path = vim/bundle/vim-jade
-        url = https://github.com/digitaltoad/vim-jade 
+    path = vim/bundle/vim-jade
+    url = https://github.com/digitaltoad/vim-jade 
 [submodule "vim/bundle/vim-javascript"]
-        path = vim/bundle/vim-javascript
-        url = https://github.com/pangloss/vim-javascript 
+    path = vim/bundle/vim-javascript
+    url = https://github.com/pangloss/vim-javascript 
 [submodule "vim/bundle/vim-jst"]
-        path = vim/bundle/vim-jst
-        url = https://github.com/briancollins/vim-jst 
+    path = vim/bundle/vim-jst
+    url = https://github.com/briancollins/vim-jst 
 [submodule "vim/bundle/vim-powerline"]
-        path = vim/bundle/vim-powerline
-        url = https://github.com/Lokaltog/vim-powerline 
+    path = vim/bundle/vim-powerline
+    url = https://github.com/Lokaltog/vim-powerline 
+[submodule "vim/bundle/snipmate.vim"]
+    path = vim/bundle/snipmate.vim
+    url = https://github.com/msanders/snipmate.vim
+[submodule "vim/bundle/delimitMate"]
+    path = vim/bundle/delimitMate
+    url = https://github.com/Raimondi/delimitMate
+[submodule "vim/bundle/nerdtree"]
+    path = vim/bundle/nerdtree
+    url = https://github.com/scrooloose/nerdtree
+[submodule "vim/bunble/numbers"]
+    path = vim/bundle/numbers
+    url = https://github.com/myusuf3/numbers.vim
+[submodule "vim/bundle/tagbar"]
+    path =  vim/bundle/tagbar
+    url = https://github.com/majutsushi/tagbar
+[submodule "vim/bundle/tcomment_vim"]
+    path = vim/bundle/tcomment_vim
+    url = https://github.com/tomtom/tcomment_vim
+[submodule "vim/bundle/vim-easymotion"]
+    path = vim/bundle/vim-easymotion
+    url = https://github.com/Lokaltog/vim-easymotion
+[submodule "vim/bunlde/vim-matrix-screensaver"]
+    path = vim/bundle/vim-matrix-sreensaver
+    url = https://github.com/uguu-org/vim-matrix-screensaver
+[submodule "vim/bundle/vim-sparkup"]
+    path = vim/bundle/vim-sparkup
+    url = https://github.com/kogakure/vim-sparkup
+[submodule "vim/bundle/vim-surround"]
+    path = vim/bundle/vim-surround
+    url = https://github.com/tpope/vim-surround
