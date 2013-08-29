@@ -20,3 +20,6 @@
     default = current
 [core]
     editor = vim
+	autocrlf = false
+[merge]
+	tool = vimdiff

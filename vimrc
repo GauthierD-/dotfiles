@@ -21,7 +21,10 @@ set nowrap
 set tabstop=4 shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
-" set list
+set mouse=a
+
+" backup files
+set backupdir=/home/gauthierd/.vim/backup,/tmp
 
 " SWAGG
 set colorcolumn=81
