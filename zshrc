@@ -35,3 +35,19 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 alias tmux='tmux -2'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# start tmux on every shell login
+# and checks if tmux is installed before trying to launch
+if which tmux 2>&1 >/dev/null; then
+    #if no session is started, start a new session
+    test -z ${TMUX} && tmux
+
+    #when quitting tmux try to attach
+    while test -z ${TMUX}; do
+        tmux attach || break
+    done
+fi
+
