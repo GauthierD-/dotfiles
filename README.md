@@ -1,5 +1,11 @@
-#Update ASAP !
 
+download my dotfiles
+
+or
+
+```code
+npm install gauthierd-dotfiles
+```
 
 dotfiles
 ========
