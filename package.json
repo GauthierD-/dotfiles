@@ -1,0 +1,28 @@
+{
+  "name": "GauthierD-Dotfiles",
+  "version": "0.0.1",
+  "description": "DotFiles GauthierD- ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/GauthierD-/dotfiles.git"
+  },
+  "keywords": [
+    "dotfiles",
+    "vim",
+    "tmux",
+    "conf",
+    "zshrc",
+    "vimrc",
+    "gitconfig"
+  ],
+  "author": "Gauthier Deroo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GauthierD-/dotfiles/issues"
+  },
+  "homepage": "https://github.com/GauthierD-/dotfiles"
+}

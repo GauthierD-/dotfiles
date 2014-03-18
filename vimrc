@@ -1,4 +1,4 @@
-" le vimrc pour les autres utilisateurs est ici: /usr/share/vim/vimrc
+"77 le vimrc pour les autres utilisateurs est ici: /usr/share/vim/vimrc
 " le .vimrc du dossier home de l'utilisateur a la prioritité
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
@@ -24,7 +24,10 @@ set backspace=indent,eol,start
 set mouse=a
 
 " backup files
+set backup
 set backupdir=/home/gauthierd/.vim/backup,/tmp
+set writebackup
+set noswapfile
 
 " SWAGG
 set colorcolumn=81
@@ -61,3 +64,5 @@ nmap <F2> :NERDTreeToggle<CR>
 nmap <F11> :Matrix<CR>
 " SOON FUCK THAT nnoremap <F5> :GundoToggle<CR>
 let g:EasyMotion_leader_key = '<leader>'
+nmap <C-Down> :m .+1<CR>
+nmap <C-Up> :m .-2<CR>

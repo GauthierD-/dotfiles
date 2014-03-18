@@ -1,5 +1,5 @@
 [user]
-	name = Gauthier Deroo
+    name = Gauthier Deroo
     email = g.deroo@gmail.com
 [github]
     user = GauthierD-
@@ -20,6 +20,21 @@
     default = current
 [core]
     editor = vim
-	autocrlf = false
+    autocrlf = false
 [merge]
-	tool = vimdiff
+    tool = vimdiff
+[alias]
+    s = status
+    st = status
+    ss = status -s
+    who = shortlog -sne
+    oneline = log --pretty=oneline --abbrev-commit --graph
+    changes = diff --name-status
+    ds = diff --stat
+    d = diff
+    dic = diff --cached
+    dh  = diff HEAD
+    amend = commit --amend
+    addm = !git-ls-files -m -z | xargs -0 git-add && git status
+    addu = !git-ls-files -o --exclude-standard -z | xargs -0 git-add && git status
+    rmm  = !git ls-files -d -z | xargs -0 git-rm && git status
