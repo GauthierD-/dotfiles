@@ -27,8 +27,13 @@
     s = status
     st = status
     ss = status -s
+    b = branch
+    ck = checkout
     who = shortlog -sne
-    oneline = log --pretty=oneline --abbrev-commit --graph
+    graph = log --oneline --decorate --graph
+	logcommit = log --pretty=format:'%C(yellow) %h %Cblue %cn %C(green) %ss'
+	lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    oneline = log --oneline --decorate --color 
     changes = diff --name-status
     ds = diff --stat
     d = diff
