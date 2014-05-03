@@ -19,7 +19,7 @@ colorscheme SolarizedDark
 " Whitespace
 set nowrap
 set tabstop=4 shiftwidth=4
-set expandtab
+set noexpandtab
 set backspace=indent,eol,start
 set mouse=a
 
