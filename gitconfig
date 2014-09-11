@@ -7,6 +7,7 @@
     diff = auto
     status = auto
     branch = auto
+	ui = 1
 [color "branch"]
     current = yellow reverse
     remote = green bold
@@ -21,8 +22,15 @@
 [core]
     editor = vim
     autocrlf = false
+	mergeoptions = --no-edit
 [merge]
     tool = vimdiff
+[instaweb]
+    local = true
+    httpd = apache2 -f
+    port = 4321
+    browser = google-chrome
+    modulepath = /usr/lib/apache2/modules
 [alias]
     s = status
     st = status
@@ -31,8 +39,9 @@
     ck = checkout
     who = shortlog -sne
     graph = log --oneline --decorate --graph
-    logcommit = log --pretty=format:'%C(yellow) %h %Cblue %cn %C(green) %ss'
-    lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	logcommit = log --pretty=format:'%C(yellow) %h %Cblue %cn %C(green) %ss'
+	lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	l = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     oneline = log --oneline --decorate --color 
     changes = diff --name-status
     ds = diff --stat
@@ -43,3 +52,5 @@
     addm = !git-ls-files -m -z | xargs -0 git-add && git status
     addu = !git-ls-files -o --exclude-standard -z | xargs -0 git-add && git status
     rmm  = !git ls-files -d -z | xargs -0 git-rm && git status
+[help]
+	autocorrect = 1
