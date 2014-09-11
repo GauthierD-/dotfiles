@@ -66,4 +66,4 @@ nmap <F11> :Matrix<CR>
 let g:EasyMotion_leader_key = '<leader>'
 nmap <C-Down> :m .+1<CR>
 nmap <C-Up> :m .-2<CR>
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-c> :nohl<CR><C-c>
