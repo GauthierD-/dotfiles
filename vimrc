@@ -17,6 +17,7 @@ colorscheme SolarizedDark
 :iabbrev @@     g.deroo@gmail.com
 :iabbrev nnick  GauthierD-
 
+
 " Whitespace
 set expandtab
 set nowrap
