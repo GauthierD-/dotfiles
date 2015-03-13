@@ -21,3 +21,8 @@ COMING SOON
 ===========
 
 dunno
+
+
+HOW TO UPDATE MODULE
+====================
+git submodules foreach pulll origin master

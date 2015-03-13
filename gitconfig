@@ -1,56 +1,59 @@
 [user]
-    name = Gauthier Deroo
-    email = g.deroo@gmail.com
+  name = Gauthier Deroo
+  email = g.deroo@gmail.com
 [github]
-    user = GauthierD-
+  user = GauthierD-
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-	ui = 1
+  diff = auto
+  status = auto
+  branch = auto
+  ui = 1
 [color "branch"]
-    current = yellow reverse
-    remote = green bold
-    local = blue bold
+  current = yellow reverse
+  remote = green bold
+  local = blue bold
 [color "diff"]
-    meta = blue bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = blue bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [push]
-    default = current
+  default = current
 [core]
-    editor = vim
-    autocrlf = false
-	mergeoptions = --no-edit
+  editor = vim
+  autocrlf = false
+  mergeoptions = --no-edit
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 [instaweb]
-    local = true
-    httpd = apache2 -f
-    port = 4321
-    browser = google-chrome
-    modulepath = /usr/lib/apache2/modules
+  local = true
+  httpd = apache2 -f
+  port = 4321
+  browser = google-chrome
+  modulepath = /usr/lib/apache2/modules
 [alias]
-    s = status
-    st = status
-    ss = status -s
-    b = branch
-    ck = checkout
-    who = shortlog -sne
-    graph = log --oneline --decorate --graph
-	logcommit = log --pretty=format:'%C(yellow) %h %Cblue %cn %C(green) %ss'
-	lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	l = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-    oneline = log --oneline --decorate --color 
-    changes = diff --name-status
-    ds = diff --stat
-    d = diff
-    dic = diff --cached
-    dh  = diff HEAD
-    amend = commit --amend
-    addm = !git-ls-files -m -z | xargs -0 git-add && git status
-    addu = !git-ls-files -o --exclude-standard -z | xargs -0 git-add && git status
-    rmm  = !git ls-files -d -z | xargs -0 git-rm && git status
+  a = add --all
+  s = status
+  st = status
+  ss = status -s
+  b = branch
+  c = commit -m
+  pl = pull
+  p = push
+  ck = checkout
+  rank = shortlog -sne --no-merges
+  graph = log --oneline --decorate --graph
+  logcommit = log --pretty=format:'%C(yellow) %h %Cblue %cn %C(green) %ss'
+  l = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  ll = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  oneline = log --oneline --decorate --color 
+  changes = diff --name-status
+  ds = diff --stat
+  d = diff
+  dic = diff --cached
+  dh  = diff HEAD
+  amend = commit --amend
+  rmm  = !git ls-files -d -z | xargs -0 git-rm && git status
 [help]
-	autocorrect = 1
+  autocorrect = 1

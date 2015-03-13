@@ -1,45 +1,60 @@
 [submodule "vim/bundle/vim-jade"]
-    path = vim/bundle/vim-jade
-    url = https://github.com/digitaltoad/vim-jade 
+  path = vim/bundle/vim-jade
+  url = https://github.com/digitaltoad/vim-jade 
 [submodule "vim/bundle/vim-javascript"]
-    path = vim/bundle/vim-javascript
-    url = https://github.com/pangloss/vim-javascript 
-[submodule "vim/bundle/vim-jst"]
-    path = vim/bundle/vim-jst
-    url = https://github.com/briancollins/vim-jst 
-[submodule "vim/bundle/vim-powerline"]
-    path = vim/bundle/vim-powerline
-    url = https://github.com/Lokaltog/vim-powerline 
+  path = vim/bundle/vim-javascript
+  url = https://github.com/pangloss/vim-javascript 
 [submodule "vim/bundle/delimitMate"]
-    path = vim/bundle/delimitMate
-    url = https://github.com/Raimondi/delimitMate
+  path = vim/bundle/delimitMate
+  url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/nerdtree"]
-    path = vim/bundle/nerdtree
-    url = https://github.com/scrooloose/nerdtree
-[submodule "vim/bunble/numbers"]
-    path = vim/bundle/numbers
-    url = https://github.com/myusuf3/numbers.vim
+  path = vim/bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree
 [submodule "vim/bundle/tagbar"]
-    path =  vim/bundle/tagbar
-    url = https://github.com/majutsushi/tagbar
+  path =  vim/bundle/tagbar
+  url = https://github.com/majutsushi/tagbar
 [submodule "vim/bundle/tcomment_vim"]
-    path = vim/bundle/tcomment_vim
-    url = https://github.com/tomtom/tcomment_vim
+  path = vim/bundle/tcomment_vim
+  url = https://github.com/tomtom/tcomment_vim
 [submodule "vim/bundle/vim-easymotion"]
-    path = vim/bundle/vim-easymotion
-    url = https://github.com/Lokaltog/vim-easymotion
+  path = vim/bundle/vim-easymotion
+  url = https://github.com/Lokaltog/vim-easymotion
 [submodule "vim/bunlde/vim-matrix-screensaver"]
-    path = vim/bundle/vim-matrix-sreensaver
-    url = https://github.com/uguu-org/vim-matrix-screensaver
-[submodule "vim/bundle/vim-sparkup"]
-    path = vim/bundle/vim-sparkup
-    url = https://github.com/kogakure/vim-sparkup
+  path = vim/bundle/vim-matrix-sreensaver
+  url = https://github.com/uguu-org/vim-matrix-screensaver
 [submodule "vim/bundle/vim-surround"]
-    path = vim/bundle/vim-surround
-    url = https://github.com/tpope/vim-surround
-[submodule "vim/bundle/vim-matrix-screensaver"]
-	path = vim/bundle/vim-matrix-screensaver
-	url = https://github.com/uguu-org/vim-matrix-screensaver
+  path = vim/bundle/vim-surround
+  url = https://github.com/tpope/vim-surround
 [submodule "vim/bundle/snipmate.vim"]
-	path = vim/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
+  path = vim/bundle/snipmate.vim
+  url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = git@github.com:sjl/gundo.vim.git
+[submodule "vim/bundle/jshint2.vim"]
+	path = vim/bundle/jshint2.vim
+	url = git@github.com:Shutnik/jshint2.vim.git
+[submodule "vim/bundle/numbers.vim"]
+	path = vim/bundle/numbers.vim
+	url = git@github.com:myusuf3/numbers.vim.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = git@github.com:powerline/powerline.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = git@github.com:elzr/vim-json.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
+[submodule "vim/bundle/vim-superman"]
+	path = vim/bundle/vim-superman
+	url = git@github.com:jez/vim-superman.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-eunuch"]
+	path = vim/bundle/vim-eunuch
+	url = git@github.com:tpope/vim-eunuch.git
