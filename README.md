@@ -26,3 +26,5 @@ dunno
 HOW TO UPDATE MODULE
 ====================
 git submodules foreach pulll origin master
+OR use
+https://github.com/earwig/git-repo-updater
