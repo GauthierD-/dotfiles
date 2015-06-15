@@ -33,9 +33,10 @@
   modulepath = /usr/lib/apache2/modules
 [alias]
   a = add --all
-  s = status
+  adda = add .
+  s = status -s
   st = status
-  ss = status -s
+  ss = status
   b = branch
   c = commit -m
   pl = pull
