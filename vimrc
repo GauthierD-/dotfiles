@@ -4,6 +4,7 @@ call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
+filetype plugin on
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict 
 
 set nocompatible
@@ -32,6 +33,7 @@ set noswapfile
 " SWAGG
 set colorcolumn=81
 set relativenumber
+let &scrolloff=999-&scrolloff
 " set cursorline
 
 " Searching
@@ -39,25 +41,54 @@ set hlsearch
 set incsearch
 set ignorecase
 
-" Vim-javascript
-let g:html_indent_inctags = "html, body, head, tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-
 " Vim powerline
 let g:Powerline_symbols = "unicode"
 set laststatus=2
 set t_Co=256
+set noshowmode
+set fillchars+=stl:\ , stlnc:\
 
-" Vim EJS
-au BufNewFile,BufRead *.ejs set filetype=js
-au BufnewFile,BufRead *.ejs set filetype=html
+" Powerline configuration
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+" Vim markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Vim neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" Vim json
+let g:indentLine_noConcealCursor=""
+let g:vim_json_syntax_conceal = 0
+
+" Vim jshint2
+set runtimepath+=/.vim/bundle/jshint2.vim/
+let jshint2_save = 1
+let jshint2_min_height = 3
+let jshint2_max_height = 10
+let jshint2_color = 1
+
+" DelimitMate
+let g:delimitMate_autoclose = 1
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 1
+let delimitMate_expand_inside_quote = 1
+let g:delimitMate_smart_quotes = 1
+let g:delimitMate_jump_expansion = 1
+let g:delimitMate_matchparis = "(:),[:],{:},<:>"
+
+" Nerdtree
+let g:NERDTreeWinSize = 40;
+
 
 let mapleader = ","
 " Eddit my vimrc faster
 nmap <leader>ev :vsplit $MYVIMRC<CR>
 
 " Mappings
+nmap gp :tabprevious<CR>
 nnoremap <F3> :NumbersToggle<CR>
 nmap <F12> :TagbarToggle<CR>
 nmap <F2> :NERDTreeToggle<CR>
@@ -70,11 +101,6 @@ nnoremap <silent><C-s> :w<CR>
 nnoremap <silent> <C-c> :nohl<CR><C-l>
 nnoremap <Leader>m :w <Bar> !lessc -x -sm=on % > %:t:r.css<CR><space>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-let g:neocomplcache_enable_at_startup = 1
-let g:indentLine_noConcealCursor=""
-let g:vim_json_syntax_conceal = 0
-
 
 " seetab toggles between showing tabs and using standard listchars
 fu! SeeTab()
