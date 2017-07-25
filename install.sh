@@ -22,4 +22,4 @@ cp zshrc ~/.zshrc
 echo "Updating submodules"
 git submodule foreach git pull origin master --recurse-submodules
 
-echo "All done. Biatch!"
+echo "All done. Biaatch!"
