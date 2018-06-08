@@ -97,11 +97,6 @@ export KUBE_EDITOR="vim"
 # export K8PATH=/Users/Gauthierderoo/Documents/k8/kubernetes/platforms/darwin/amd64
 # export PATH=$PATH:$K8PATH
 
-export NPM_TOKEN=b1bd9ee4-c3f9-4c19-a07c-00d7a21dcaa6
-export GOOGLE_MAPS_KEY=AIzaSyCgSjw75V2YSoSbll1HsaH1kkQESMjzqtc
-export INSTAGRAM_CLIENT_ID=2fa7b3e24a4446b5b303a6bfea3cd09c
-export MAPBOX_KEY=pk.eyJ1IjoiZnJhbnR6cmVlbGV2YW50IiwiYSI6ImNpeWs2aWhhcjAwMWQyd3I0bGd6cnllOXkifQ.2M9A0N21P4TttPmeTaMSpA
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc'; fi
 
