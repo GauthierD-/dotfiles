@@ -52,7 +52,7 @@
   changes = diff --name-status
   ds = diff --stat
   d = diff
-  dic = diff --cached
+  dc = diff --cached
   dh  = diff HEAD
   amend = commit --amend
   rmm  = !git ls-files -d -z | xargs -0 git-rm && git status

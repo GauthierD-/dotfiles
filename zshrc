@@ -33,22 +33,25 @@ ZSH_THEME="wedisagree"
 plugins=(
   git
   z
-  zsh-syntax-highlighting
   npm
   tmux
+  kubectl
+  zsh-syntax-highlighting
  )
 
 # ZSH_TMUX_AUTOSTART="true"
 # ZSH_TMUX_AUTOCONNECT="true"
 
+LANG=en_US.UTF-8
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+alias vim='nvim'
 alias tmux='tmux -2'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias m='meteor'
 alias git-branch-rm='git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done'
 alias docker-image-rm-none='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 alias docker-image-rm='docker rmi $(docker images -a -q)'
@@ -67,9 +70,6 @@ if which tmux 2>&1 >/dev/null; then
     done
 fi
 
-export NVM_DIR="/Users/Gauthierderoo/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Config for vim-superman (man inside vim)
 vman() {
     vim -c "SuperMan $*"
@@ -79,16 +79,6 @@ vman() {
     fi
 }
 
-# completion NVM
-[ -r $NVM_DIR/bash_completion  ] && . $NVM_DIR/bash_completion
-
-###-tns-completion-start-###
-if [ -f /Users/Gauthierderoo/.tnsrc ]; then 
-    source /Users/Gauthierderoo/.tnsrc 
-fi
-###-tns-completion-end-###
-
-
 ### archey swag
 archey -c
 
@@ -97,13 +87,19 @@ export KUBE_EDITOR="vim"
 # export K8PATH=/Users/Gauthierderoo/Documents/k8/kubernetes/platforms/darwin/amd64
 # export PATH=$PATH:$K8PATH
 
+export PATH=/usr/local/bin:$PATH
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc' ]; then
+  source '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc';
+fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/Gauthierderoo/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/Gauthierderoo/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/Gauthierderoo/google-cloud-sdk/completion.zsh.inc' ]; then
+  source '/Users/Gauthierderoo/google-cloud-sdk/completion.zsh.inc';
+fi
 
-### Java / Maven / Beam
-export JAVA_HOME=$(/usr/libexec/java_home)
-export MAVENPATH=/Users/Gauthierderoo/apache-maven-3.5.0
-export PATH=$PATH:$MAVENPATH/bin
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

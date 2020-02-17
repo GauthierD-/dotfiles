@@ -1,4 +1,4 @@
-call pathogen#infect()
+execute pathogen#infect()
 
 filetype plugin indent on
 filetype plugin on
@@ -9,8 +9,9 @@ set encoding=utf-8
 set shortmess=at
 set showcmd
 set mouse=a
-set ttymouse=xterm2
-" set clipboard=unnamed
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 set nopaste
 set cmdheight=2
 set exrc " vimrc by project
@@ -51,18 +52,24 @@ set hlsearch
 set incsearch
 set ignorecase
 
-" Vim powerline
-let g:Powerline_symbols = "unicode"
-set laststatus=2
-set noshowmode
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" fzf
+set rtp+=/usr/local/opt/fzf
+
 
 " NerdTree config
 let g:NERDTreeWinSize=40
+
+" Personal commnand
+command! -nargs=* Blame call s:GitBlame()
+
+function! s:GitBlame()
+    let cmd = "git blame -w " . bufname("%")
+    let nline = line(".") + 1
+    botright new
+    execute "$read !" . cmd
+    execute "normal " . nline . "gg"
+    execute "set filetype=perl" 
+endfunction
 
 " DelimitMate config
 let g:delimitMate_autoclose = 1
@@ -73,23 +80,28 @@ let g:delimitMate_smart_quotes = 1
 let g:delimitMate_jump_expansion =1
 let g:delimitMate_matchparis = "(:),[:],{:},<:>"
 
-" vim-jsx
-let g:jsx_ext_required = 0
+" search
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
-" Syntastic
-" to avoid conflict with powerline Statusline code inside
-" .config/pownerline/themes/vim/default.json
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_yaml_checkers = ['jsyaml', 'yamllint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 7
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_w = 1
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+" Ale (Asynchronous Lint Engine)
+" :lopen > open error list
+" :lclose > close error list
+" :lne > next error
+" :lpe > previous error
+" let g:ale_open_list = 1
+" let g:ale_fix_on_save = 1
+let g:ale_sign_error = '❗️'
+let g:ale_sign_warning = '💩'
+let g:ale_echo_msg_error_str = '❗️'
+let g:ale_echo_msg_warning_str = '💩'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {'javascript':  ['eslint'], 'javascriptreact': ['eslint']}
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" Nvim coc
+" let g:coc_force_debug = 1
 
 " Mappings
 let mapleader = ","
@@ -97,28 +109,22 @@ nmap <leader>ev :vsplit $MYVIMRC<CR>
 nmap gp :tabprevious<CR>
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :NumbersToggle<CR>
+nmap <F6> <Plug>(ale_fix)
 nmap <F7> :Matrix<CR>
 nmap <silent><C-k> :m .-2<CR>
 nmap <silent><C-j> :m .+1<CR>
 nmap <silent> <C-c> :nohl<CR>
 nmap <leader><leader>w :w<CR>
-nmap <leader><leader>f :NERDTreeFind<CR>
+nmap <leader><leader>f :NERDTreeToggle<CR>
+nnoremap <leader><leader>p :Files<CR>
+nnoremap <leader><leader>b :Buffers<CR>
+nnoremap <leader><leader>h :History<CR>
+nnoremap <leader><leader>t :BTags<CR>
+nnoremap <leader><leader>T :Tags<CR>
+nnoremap <leader><leader>gb :Blame
+
+
 
 " prevent :autocmd, shell and write commands
 " from being run inside project-specific .vimrc 
 set secure
-
-" OLD plugins remove soon
-" let g:EasyMotion_leader_key = '<leader>'
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
-"
-" Vim Markdown
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Vim-json
-" let g:indentLine_noConcealCursor=""
-" let g:vim_json_syntax_conceal = 0
-
-" nmap <Leader>w <Plug>(easymotion-w)
-" nmap <Leader>j <Plug>(easymotion-j)
-
