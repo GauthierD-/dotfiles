@@ -1,5 +1,5 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+# Path to your oh-my-zsh configuration.
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -31,11 +31,13 @@ ZSH_THEME="wedisagree"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+  docker
+  deno
+  docker-compose
   git
   z
   npm
   tmux
-  kubectl
   zsh-syntax-highlighting
  )
 
@@ -45,6 +47,10 @@ plugins=(
 LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
 
 # Customize to your needs...
 alias vim='nvim'
@@ -52,23 +58,32 @@ alias tmux='tmux -2'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias open=xdg-open
 alias git-branch-rm='git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done'
 alias docker-image-rm-none='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 alias docker-image-rm='docker rmi $(docker images -a -q)'
 alias docker-ps-stop='docker stop $(docker ps -a -q)'
 alias docker-ps-rm='docker rm $(docker ps -a -q)'
+alias kubecompl='source <(kubectl completion zsh)'
+alias aosdev='docker-compose up -d aos-serverless-stats aos-server-app aos-client-app'
+alias aosdevconsultation='docker-compose up -d aos-serverless-stats aos-server-app aos-client-app aos-api-consultation aos-server-excel-generator'
+alias aosdevapi='docker-compose up -d aos-api-authorization aos-api-consultation aos-api-digital-signature aos-api-invitation aos-api-organization aos-api-stats'
+alias aosclean='npx lerna run clean && npx lerna clean --yes && rm -rf node_modules && npm ci'
+alias aoslogs='docker-compose logs -f'
+alias dcd='docker-compose down'
+alias fuckFwd='sudo cp ~/bin/hosts /etc/hosts'
 
 # start tmux on every shell login
 # and checks if tmux is installed before trying to launch
-if which tmux 2>&1 >/dev/null; then
-    #if no session is started, start a new session
-    test -z ${TMUX} && tmux
-
-    #when quitting tmux try to attach
-    while test -z ${TMUX}; do
-        tmux attach || break
-    done
-fi
+#if which tmux 2>&1 >/dev/null; then
+#    #if no session is started, start a new session
+#    test -z ${TMUX} && tmux
+#
+#    #when quitting tmux try to attach
+#    while test -z ${TMUX}; do
+#        tmux attach || break
+#    done
+#fi
 
 # Config for vim-superman (man inside vim)
 vman() {
@@ -80,14 +95,27 @@ vman() {
 }
 
 ### archey swag
-archey -c
+#archey -c # MacOS
+archey # Debian
 
-## Kubernete
+## Kubernetes
 export KUBE_EDITOR="vim"
 # export K8PATH=/Users/Gauthierderoo/Documents/k8/kubernetes/platforms/darwin/amd64
 # export PATH=$PATH:$K8PATH
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+
+export PATH=$PATH:$HOME/bin
+
+export GO_PATH=$(go env GOPATH)
+export DENO_INSTALL=/home/gauthierd/.deno
+export PROTOBUF_PATH=$HOME/.local/bin
+
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$GO_PATH/bin:$PATH"
+export PATH="$PROTOBUF_PATH:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/Gauthierderoo/google-cloud-sdk/path.zsh.inc' ]; then
@@ -102,4 +130,3 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-

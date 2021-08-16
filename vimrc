@@ -97,11 +97,20 @@ let g:ale_sign_warning = '💩'
 let g:ale_echo_msg_error_str = '❗️'
 let g:ale_echo_msg_warning_str = '💩'
 let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {'typescript': ['deno']}
 let g:ale_linters = {'javascript':  ['eslint'], 'javascriptreact': ['eslint']}
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+nmap gr <Plug>(ale_rename)
+nmap gR <Plug>(ale_find_reference)
+nmap gd <Plug>(ale_go_to_definition)
+nmap gD <Plug>(ale_go_to_type_definition)
 
-" Nvim coc
-" let g:coc_force_debug = 1
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
+" vim-jsx-typescript
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " Mappings
 let mapleader = ","
@@ -115,15 +124,15 @@ nmap <silent><C-k> :m .-2<CR>
 nmap <silent><C-j> :m .+1<CR>
 nmap <silent> <C-c> :nohl<CR>
 nmap <leader><leader>w :w<CR>
-nmap <leader><leader>f :NERDTreeToggle<CR>
+nmap <leader><leader>f :NERDTreeFind<CR>
 nnoremap <leader><leader>p :Files<CR>
 nnoremap <leader><leader>b :Buffers<CR>
 nnoremap <leader><leader>h :History<CR>
 nnoremap <leader><leader>t :BTags<CR>
 nnoremap <leader><leader>T :Tags<CR>
 nnoremap <leader><leader>gb :Blame
-
-
+nnoremap <Leader>cr :let @+=expand('%')<CR>
+nnoremap <Leader>cf :let @+=expand('%:p')<CR>
 
 " prevent :autocmd, shell and write commands
 " from being run inside project-specific .vimrc 
