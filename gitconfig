@@ -20,7 +20,7 @@
 [push]
   default = current
 [core]
-  editor = vim
+  editor = nvim
   autocrlf = false
   mergeoptions = --no-edit
 [merge]

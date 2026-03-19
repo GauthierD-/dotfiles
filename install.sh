@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+# NEED REWORK WITHOUT SUBMODULE
+
 echo "initializing submodules"
 git submodule init
 git submodule update

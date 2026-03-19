@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+spacebar -m config position                    top
+spacebar -m config height                      26
+spacebar -m config title                       on
+spacebar -m config spaces                      on
+spacebar -m config clock                       on
+spacebar -m config power                       on
+spacebar -m config padding_left                20
+spacebar -m config padding_right               20
+spacebar -m config spacing_left                25
+spacebar -m config spacing_right               15
+spacebar -m config text_font                   "Helvetica Neue:Bold:12.0"
+spacebar -m config icon_font                   "SauceCodePro Nerd Font:Regular:12.0"
+# spacebar -m config space_icon_strip               
+spacebar -m config space_icon_strip            1 2 3 4 5 6 7 8 9 10
+# spacebar -m config space_icon_strip            一 二 三 四 五 六 七 八 九 十
+spacebar -m config clock_icon                   
+spacebar -m config clock_format                "%d/%m/%y %R"
+spacebar -m config power_icon_strip              
+
+
+echo "spacebar configuration loaded.."
